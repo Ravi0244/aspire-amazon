@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-04T21:20:04 IST" name="Suite" finished-at="2022-10-04T21:20:40 IST" duration-ms="36617">
+  <suite started-at="2022-10-05T23:41:27 IST" name="Suite" finished-at="2022-10-05T23:42:52 IST" duration-ms="84229">
     <groups>
     </groups>
-    <test started-at="2022-10-04T21:20:04 IST" name="Test3" finished-at="2022-10-04T21:20:40 IST" duration-ms="36617">
-      <class name="com.amazon.Testcases.TestCase3">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.amazon.Testcases.TestCase3@32502377]" started-at="2022-10-04T21:20:04 IST" name="setUp" finished-at="2022-10-04T21:20:09 IST" duration-ms="5396" status="PASS">
+    <test started-at="2022-10-05T23:41:27 IST" name="Test1" finished-at="2022-10-05T23:41:53 IST" duration-ms="25668">
+      <class name="com.amazon.Testcases.TestCase1">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.amazon.Testcases.TestCase1@7b36aa0c]" started-at="2022-10-05T23:41:28 IST" name="setUp" finished-at="2022-10-05T23:41:32 IST" duration-ms="4759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySignInScreen(double,double)[pri:0, instance:com.amazon.Testcases.TestCase3@32502377]" started-at="2022-10-04T21:20:09 IST" name="verifySignInScreen" finished-at="2022-10-04T21:20:40 IST" duration-ms="31157" status="FAIL">
+        <test-method signature="verifyPriceOfItem(double,double)[pri:0, instance:com.amazon.Testcases.TestCase1@7b36aa0c]" started-at="2022-10-05T23:41:32 IST" name="verifyPriceOfItem" finished-at="2022-10-05T23:41:53 IST" duration-ms="20670" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -20,49 +20,20 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[200.0]]>
+                <![CDATA[2000.0]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[element click intercepted: Element <select aria-describedby="searchDropdownDescription" class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown" data-nav-digest="k+fyIAyB82R9jVEmroQ0OWwSW3A=" data-nav-selected="0" id="searchDropdownBox" name="url" style="display: block; top: 2.5px;" tabindex="0" title="Search in">...</select> is not clickable at point (250, 31). Other element would receive the click: <div class="a-modal-scroller a-declarative" data-action="a-popover-floating-close" style="padding-bottom: 0px; visibility: visible;">...</div>
-  (Session info: chrome=105.0.5195.127)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'HW0737', ip: '172.17.0.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\RAVI~1.TAL\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:56952}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 87eb321a5d69a572e90c669a35ed0c20]]>
+              <![CDATA[This price value is not in the selected range of 100-2000$ =$94.99 expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <select aria-describedby="searchDropdownDescription" class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown" data-nav-digest="k+fyIAyB82R9jVEmroQ0OWwSW3A=" data-nav-selected="0" id="searchDropdownBox" name="url" style="display: block; top: 2.5px;" tabindex="0" title="Search in">...</select> is not clickable at point (250, 31). Other element would receive the click: <div class="a-modal-scroller a-declarative" data-action="a-popover-floating-close" style="padding-bottom: 0px; visibility: visible;">...</div>
-  (Session info: chrome=105.0.5195.127)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'HW0737', ip: '172.17.0.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\RAVI~1.TAL\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:56952}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 87eb321a5d69a572e90c669a35ed0c20
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-at amazon.pages.HomePage.selectCategory(HomePage.java:62)
-at com.amazon.Testcases.TestCase3.verifySignInScreen(TestCase3.java:45)
+              <![CDATA[java.lang.AssertionError: This price value is not in the selected range of 100-2000$ =$94.99 expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at com.amazon.Testcases.TestCase1.verifyPriceOfItem(TestCase1.java:55)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -93,10 +64,78 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPriceOfItem -->
+        <test-method is-config="true" signature="QuitBrowser()[pri:0, instance:com.amazon.Testcases.TestCase1@7b36aa0c]" started-at="2022-10-05T23:41:53 IST" name="QuitBrowser" finished-at="2022-10-05T23:41:53 IST" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuitBrowser -->
+      </class> <!-- com.amazon.Testcases.TestCase1 -->
+    </test> <!-- Test1 -->
+    <test started-at="2022-10-05T23:41:53 IST" name="Test2" finished-at="2022-10-05T23:42:11 IST" duration-ms="18131">
+      <class name="com.amazon.Testcases.TestCase2">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.amazon.Testcases.TestCase2@76b1e9b8]" started-at="2022-10-05T23:41:53 IST" name="setUp" finished-at="2022-10-05T23:41:56 IST" duration-ms="3219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySortingOrder(double,double)[pri:0, instance:com.amazon.Testcases.TestCase2@76b1e9b8]" started-at="2022-10-05T23:41:56 IST" name="verifySortingOrder" finished-at="2022-10-05T23:42:11 IST" duration-ms="14703" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100.0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[200.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySortingOrder -->
+        <test-method is-config="true" signature="QuitBrowser()[pri:0, instance:com.amazon.Testcases.TestCase2@76b1e9b8]" started-at="2022-10-05T23:42:11 IST" name="QuitBrowser" finished-at="2022-10-05T23:42:11 IST" duration-ms="205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuitBrowser -->
+      </class> <!-- com.amazon.Testcases.TestCase2 -->
+    </test> <!-- Test2 -->
+    <test started-at="2022-10-05T23:42:11 IST" name="Test3" finished-at="2022-10-05T23:42:52 IST" duration-ms="40364">
+      <class name="com.amazon.Testcases.TestCase3">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.amazon.Testcases.TestCase3@563f38c4]" started-at="2022-10-05T23:41:27 IST" name="setup" finished-at="2022-10-05T23:41:27 IST" duration-ms="223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.amazon.Testcases.TestCase3@563f38c4]" started-at="2022-10-05T23:42:11 IST" name="setUp" finished-at="2022-10-05T23:42:16 IST" duration-ms="4173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySignInScreen(double,double)[pri:0, instance:com.amazon.Testcases.TestCase3@563f38c4]" started-at="2022-10-05T23:42:16 IST" name="verifySignInScreen" finished-at="2022-10-05T23:42:51 IST" duration-ms="35839" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100.0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[200.0]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySignInScreen -->
+        <test-method is-config="true" signature="QuitBrowser()[pri:0, instance:com.amazon.Testcases.TestCase3@563f38c4]" started-at="2022-10-05T23:42:51 IST" name="QuitBrowser" finished-at="2022-10-05T23:42:52 IST" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuitBrowser -->
+        <test-method is-config="true" signature="tearDownExtent()[pri:0, instance:com.amazon.Testcases.TestCase3@563f38c4]" started-at="2022-10-05T23:42:52 IST" name="tearDownExtent" finished-at="2022-10-05T23:42:52 IST" duration-ms="263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownExtent -->
       </class> <!-- com.amazon.Testcases.TestCase3 -->
     </test> <!-- Test3 -->
   </suite> <!-- Suite -->

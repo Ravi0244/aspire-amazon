@@ -6,6 +6,9 @@
       <class name="com.amazon.Testcases.TestCase2">
         <methods>
           <include name="verifySortingOrder"/>
+          <include name="tearDownExtent"/>
+          <include name="QuitBrowser"/>
+          <include name="setup"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.amazon.Testcases.TestCase2 -->

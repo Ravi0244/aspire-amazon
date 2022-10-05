@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test3(failed)">
+  <test thread-count="5" name="Test1(failed)">
     <parameter name="minPrice" value="100"/>
-    <parameter name="maxPrice" value="200"/>
+    <parameter name="maxPrice" value="2000"/>
     <classes>
-      <class name="com.amazon.Testcases.TestCase3">
+      <class name="com.amazon.Testcases.TestCase1">
         <methods>
-          <include name="verifySignInScreen" invocation-numbers="0"/>
           <include name="setUp"/>
+          <include name="tearDownExtent"/>
+          <include name="verifyPriceOfItem" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="QuitBrowser"/>
         </methods>
-      </class> <!-- com.amazon.Testcases.TestCase3 -->
+      </class> <!-- com.amazon.Testcases.TestCase1 -->
     </classes>
-  </test> <!-- Test3(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

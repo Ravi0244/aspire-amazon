@@ -1,16 +1,22 @@
 package amazon.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,16 +28,25 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
-import amazon.pages.HomePage;
-import amazon.util.*;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+import amazon.listeners.TestListenerClass;
+import amazon.util.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@Listeners(TestListenerClass.class)
 public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
 	public static WebDriverWait wait;
+	public static ExtentReports extent;
+	public static ExtentSparkReporter spark;
+	public static ExtentTest test;
 	
 	public TestBase() {
 		try {
@@ -45,8 +60,7 @@ public class TestBase {
 		}
 		
 	}
-	
-	
+
 	public static void initialize()
 	{
 		String browserName = prop.getProperty("browser");
@@ -67,9 +81,27 @@ public class TestBase {
 		}
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
-		// driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+	}
+	
+	@BeforeSuite
+	public void setup()
+	{
+		extent = new ExtentReports();
+		spark = new ExtentSparkReporter("extentreport.html");
+		extent.attachReporter(spark);
+		
+		extent.setSystemInfo("OS", "Win 10");
+	    extent.setSystemInfo("Environment", "PROD");
+	    extent.setSystemInfo("User Name", "Ravi theja Tallam");
+
+	}
+	@AfterSuite
+	public void tearDownExtent()
+	{
+		extent.flush();
 	}
 	
 	public void refreshPage() throws Exception
@@ -142,8 +174,7 @@ public class TestBase {
                 return false;
             }else if (data.get(i)==data.get(i+1))  
             	return true;     
-         }
-         return true;
+         }return true;
 	}
 	
 	public int generateRandom(int size)
@@ -155,7 +186,23 @@ public class TestBase {
 	public void mouseClick(WebElement element)
 	{
 		Actions act=new Actions(driver);
-		act.moveToElement(element).build().perform();
+		act.moveToElement(element).click().build().perform();
 	}
-
+	
+	public static void waitToBeClickable(WebElement element) {
+		wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public static String getScreenshot(String screenShotName) throws Exception
+	{
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		TakesScreenshot scrnshot= (TakesScreenshot)driver;
+		File source = scrnshot.getScreenshotAs(OutputType.FILE);
+		String destination = System.getProperty("user.dir") + "\\TestsScreenshots\\"+screenShotName+dateName+".png";
+		File finalDestination = new File(destination);
+		FileUtils.copyFile(source, finalDestination);
+		return destination;
+	}
+	
 }

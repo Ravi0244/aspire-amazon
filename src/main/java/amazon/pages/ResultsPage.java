@@ -68,9 +68,11 @@ public class ResultsPage extends TestBase{
 		
 		public void filterWithMinAndMaxPrice(double min,double max) throws Exception
 		{
+			waitVisibilityOf(lowPrice);
+			scrollToWebElement(lowPrice);
 			lowPrice.sendKeys(String.valueOf(min));
 			highPrice.sendKeys(String.valueOf(max));
-			priceGoBtn.click();
+			mouseClick(priceGoBtn);
 			waitPlease(3);
 		}
 		

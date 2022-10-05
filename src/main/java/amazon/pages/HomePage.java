@@ -42,12 +42,12 @@ public class HomePage extends TestBase{
 		public String verifyHomePageTitle() throws Exception{
 			Boolean res=false;
 			try {
-				res = amazon.isDisplayed()? true: false;
+				res = amazonLogo.isDisplayed()? true: false;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				System.out.println("Navigated to Expected amazon page without Refreshing");
+				System.out.println("Navigated to Expected amazon page");
 			}finally {
-			if(res.equals(false)) return driver.getTitle();
+			if(res.equals(true)) return driver.getTitle();
 			else {refreshPage(); return driver.getTitle();}}
 		}
 		

@@ -51,6 +51,13 @@
 		    <version>1.7.25</version>
 		</dependency>
 		
+		<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>5.0.9</version>
+		</dependency>
+		
+
   </dependencies>
   
   <build>
